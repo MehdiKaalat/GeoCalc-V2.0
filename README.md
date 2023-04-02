@@ -8,8 +8,8 @@ Calcul des paramètres d'un ellipsoïde
 Calcul des deux rayons de courbure
 Interface graphique conviviale
 ## Bibliothèques utilisées
-Math
-PyQt5
+-Math.
+-PyQt5.
 ## Comment utiliser l'application
 Pour utiliser l'application, il vous suffit de télécharger le code source depuis GitHub et d'installer les bibliothèques nécessaires en utilisant la commande pip install -r requirements.txt. Une fois que vous avez installé toutes les dépendances, vous pouvez lancer l'application en exécutant le fichier main.py.
 
