@@ -17,7 +17,7 @@ class Ui_MainWindow(object):
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(300, 50, 600, 80))
+        self.label.setGeometry(QtCore.QRect(255, 70, 600, 80))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -33,7 +33,7 @@ class Ui_MainWindow(object):
         self.label.setTextFormat(QtCore.Qt.AutoText)
         self.label.setObjectName("label")
         self.frame = QtWidgets.QFrame(self.centralwidget)
-        self.frame.setGeometry(QtCore.QRect(190, 130, 350, 350))
+        self.frame.setGeometry(QtCore.QRect(140, 95, 400, 400))
         self.frame.setStyleSheet("image: url(background.png);")
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -83,12 +83,12 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        MainWindow.setWindowTitle("GeoCalc")
+        MainWindow.setWindowTitle("GeoCalc V2.0")
         icon = QIcon("background.png")
         MainWindow.setWindowIcon(icon)
-        self.label.setText(_translate("MainWindow", "GeoCalc"))
+        self.label.setText(_translate("MainWindow", "GeoCalc V2.0"))
         self.label_2.setText(_translate("MainWindow", "Réalisé par : KAALAT El Mehdi"))
-        self.label_4.setText(_translate("MainWindow", "GéoInformation 2022/2023"))
+        self.label_4.setText(_translate("MainWindow", "GéoInformation 2023/2024"))
         self.pushButton.setText(_translate("MainWindow", "Commencer"))
 
 

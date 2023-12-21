@@ -1,12 +1,16 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import QIcon
 
-from Fonction1 import fonction1
-from Fonction2 import fonction2
-from Fonction3 import fonction3
-from Fonction4 import fonction4
-from Fonction5 import fonction5
-from Fonction6 import fonction6
+from CalculeLatitudePhEtIsometriquei import fonction2
+from TransformationCoordonnees import fonction4
+from CalculeParametresEllipsoide import fonction5
+from Calcule2RayonsCourbrue import fonction6
+from LongueurArcSurfaceV2 import LongueurArcSurface
+from CalculLatitudesV2 import calculLatitudes
+from problemeDirectInverseSphereV2 import prbDirectEtInverseSphere
+from problemeDirectInverseEllipsoideV2 import prbDirectEtInverseEllipsoide
+
+
 class pagePrincipale(object):
     def commencer(self):
         from commencer import Ui_MainWindow
@@ -14,19 +18,29 @@ class pagePrincipale(object):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self.window1)
         self.window1.show()
-    def Fct1(self):
+    def LongueurArcSurface(self):
         self.window2 = QtWidgets.QMainWindow()
-        self.ui = fonction1()
+        self.ui = LongueurArcSurface()
+        self.ui.setupUi(self.window2)
+        self.window2.show()
+    def calculLatitudes(self):
+        self.window2 = QtWidgets.QMainWindow()
+        self.ui = calculLatitudes()
+        self.ui.setupUi(self.window2)
+        self.window2.show()
+    def prbDirectEtInverseSphere(self):
+        self.window2 = QtWidgets.QMainWindow()
+        self.ui = prbDirectEtInverseSphere()
+        self.ui.setupUi(self.window2)
+        self.window2.show()
+    def prbDirectEtInverseEllipsoide(self):
+        self.window2 = QtWidgets.QMainWindow()
+        self.ui = prbDirectEtInverseEllipsoide()
         self.ui.setupUi(self.window2)
         self.window2.show()
     def Fct2(self):
         self.window2 = QtWidgets.QMainWindow()
         self.ui = fonction2()
-        self.ui.setupUi(self.window2)
-        self.window2.show()
-    def Fct3(self):
-        self.window2 = QtWidgets.QMainWindow()
-        self.ui = fonction3()
         self.ui.setupUi(self.window2)
         self.window2.show()
     def Fct4(self):
@@ -82,23 +96,79 @@ class pagePrincipale(object):
         self.verticalLayout = QtWidgets.QVBoxLayout(self.widget)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout.setObjectName("verticalLayout")
+
         self.pushButton = QtWidgets.QPushButton(self.widget)
-        self.pushButton.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         font = QtGui.QFont()
         font.setFamily("Helvetica")
         font.setPointSize(8)
         font.setBold(True)
         font.setWeight(75)
         self.pushButton.setFont(font)
+        self.pushButton.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.pushButton.setStyleSheet("background-color : #19A7CE;\n"
-"color : #F6F1F1;\n"
-"border : 0;\n"
-"border-radius : 10px;\n"
-"display : block;\n"
-"height : 40px;\n"
-"cursor:pointer;")
+                                        "color : #F6F1F1;\n"
+                                        "border : 0;\n"
+                                        "border-radius : 10px;\n"
+                                        "display : block;\n"
+                                        "height : 40px;\n"
+                                        "cursor:pointer;")
         self.pushButton.setObjectName("pushButton")
         self.verticalLayout.addWidget(self.pushButton)
+
+        self.latitudesButton = QtWidgets.QPushButton(self.widget)
+        font = QtGui.QFont()
+        font.setFamily("Helvetica")
+        font.setPointSize(8)
+        font.setBold(True)
+        font.setWeight(75)
+        self.latitudesButton.setFont(font)
+        self.latitudesButton.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.latitudesButton.setStyleSheet("background-color : #19A7CE;\n"
+                                      "color : #F6F1F1;\n"
+                                      "border : 0;\n"
+                                      "border-radius : 10px;\n"
+                                      "display : block;\n"
+                                      "height : 40px;\n"
+                                      "cursor:pointer;")
+        self.latitudesButton.setObjectName("pushButton")
+        self.verticalLayout.addWidget(self.latitudesButton)
+
+        self.prbSphereButton = QtWidgets.QPushButton(self.widget)
+        font = QtGui.QFont()
+        font.setFamily("Helvetica")
+        font.setPointSize(8)
+        font.setBold(True)
+        font.setWeight(75)
+        self.prbSphereButton.setFont(font)
+        self.prbSphereButton.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.prbSphereButton.setStyleSheet("background-color : #19A7CE;\n"
+                                           "color : #F6F1F1;\n"
+                                           "border : 0;\n"
+                                           "border-radius : 10px;\n"
+                                           "display : block;\n"
+                                           "height : 40px;\n"
+                                           "cursor:pointer;")
+        self.prbSphereButton.setObjectName("pushButton")
+        self.verticalLayout.addWidget(self.prbSphereButton)
+
+        self.prbEllipsoideButton = QtWidgets.QPushButton(self.widget)
+        font = QtGui.QFont()
+        font.setFamily("Helvetica")
+        font.setPointSize(8)
+        font.setBold(True)
+        font.setWeight(75)
+        self.prbEllipsoideButton.setFont(font)
+        self.prbEllipsoideButton.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.prbEllipsoideButton.setStyleSheet("background-color : #19A7CE;\n"
+                                           "color : #F6F1F1;\n"
+                                           "border : 0;\n"
+                                           "border-radius : 10px;\n"
+                                           "display : block;\n"
+                                           "height : 40px;\n"
+                                           "cursor:pointer;")
+        self.prbEllipsoideButton.setObjectName("pushButton")
+        self.verticalLayout.addWidget(self.prbEllipsoideButton)
+
         self.pushButton_2 = QtWidgets.QPushButton(self.widget)
         font = QtGui.QFont()
         font.setFamily("Helvetica")
@@ -116,23 +186,6 @@ class pagePrincipale(object):
 "cursor:pointer;")
         self.pushButton_2.setObjectName("pushButton_2")
         self.verticalLayout.addWidget(self.pushButton_2)
-        self.pushButton_3 = QtWidgets.QPushButton(self.widget)
-        font = QtGui.QFont()
-        font.setFamily("Helvetica")
-        font.setPointSize(8)
-        font.setBold(True)
-        font.setWeight(75)
-        self.pushButton_3.setFont(font)
-        self.pushButton_3.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_3.setStyleSheet("background-color : #19A7CE;\n"
-"color : #F6F1F1;\n"
-"border : 0;\n"
-"border-radius : 10px;\n"
-"display : block;\n"
-"height : 40px;\n"
-"cursor:pointer;")
-        self.pushButton_3.setObjectName("pushButton_3")
-        self.verticalLayout.addWidget(self.pushButton_3)
         self.pushButton_4 = QtWidgets.QPushButton(self.widget)
         font = QtGui.QFont()
         font.setFamily("Helvetica")
@@ -194,12 +247,18 @@ class pagePrincipale(object):
 
         self.pushButton_7.clicked.connect(self.commencer)
         self.pushButton_7.clicked.connect(MainWindow.close)
-        self.pushButton.clicked.connect(self.Fct1)
-        self.pushButton.clicked.connect(MainWindow.close)
         self.pushButton_2.clicked.connect(self.Fct2)
         self.pushButton_2.clicked.connect(MainWindow.close)
-        self.pushButton_3.clicked.connect(self.Fct3)
-        self.pushButton_3.clicked.connect(MainWindow.close)
+        self.pushButton.clicked.connect(self.LongueurArcSurface)
+        self.pushButton.clicked.connect(MainWindow.close)
+        self.latitudesButton.clicked.connect(self.calculLatitudes)
+        self.latitudesButton.clicked.connect(MainWindow.close)
+
+        self.prbSphereButton.clicked.connect(self.prbDirectEtInverseSphere)
+        self.prbSphereButton.clicked.connect(MainWindow.close)
+        self.prbEllipsoideButton.clicked.connect(self.prbDirectEtInverseEllipsoide)
+        self.prbEllipsoideButton.clicked.connect(MainWindow.close)
+
         self.pushButton_4.clicked.connect(self.Fct4)
         self.pushButton_4.clicked.connect(MainWindow.close)
         self.pushButton_5.clicked.connect(self.Fct5)
@@ -214,17 +273,19 @@ class pagePrincipale(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        MainWindow.setWindowTitle("GeoCalc")
+        MainWindow.setWindowTitle("GeoCalc V2.0")
         icon = QIcon("background.png")
         MainWindow.setWindowIcon(icon)
-        self.label_2.setText(_translate("MainWindow", "Choisir une operation : "))
+        self.label_2.setText(_translate("MainWindow", "Choisir une opération : "))
         self.pushButton_7.setText(_translate("MainWindow", "Retour"))
-        self.pushButton.setText(_translate("MainWindow", " Calculer la latitude isométrique 𝑈 sur un ellipsoïde au point de latitude φ"))
-        self.pushButton_2.setText(_translate("MainWindow", "Calculer la latitude φ à partir de la latitude isométrique 𝑈"))
-        self.pushButton_3.setText(_translate("MainWindow", "Transformer les coord. géographiques en coord. de projection Lambert"))
-        self.pushButton_4.setText(_translate("MainWindow", "Transformer les coord. de projection Lambert en coord. géographiques"))
-        self.pushButton_5.setText(_translate("MainWindow", "Calculer les paramètres d\'un ellipsoide"))
-        self.pushButton_6.setText(_translate("MainWindow", "Calculer les 2 rayons de courbure"))
+        self.pushButton.setText(_translate("MainWindow", "Calcul des longueurs d'arc et surface sur ellipsoide"))
+        self.latitudesButton.setText(_translate("MainWindow", "Calcul des latitudes géodésique φ, géocentrique Ψ, réduite β"))
+        self.prbSphereButton.setText(_translate("MainWindow", "Résolution du problème direct et inverse sur Sphère"))
+        self.prbEllipsoideButton.setText(_translate("MainWindow", "Résolution du problème direct et inverse sur Ellipsoide"))
+        self.pushButton_2.setText(_translate("MainWindow", "Calcul des latitudes géodésique φ et isométrique U"))
+        self.pushButton_4.setText(_translate("MainWindow", "Transformation des coordonnées"))
+        self.pushButton_5.setText(_translate("MainWindow", "Calcul des paramètres d\'un ellipsoide"))
+        self.pushButton_6.setText(_translate("MainWindow", "Calcul des 2 rayons de courbure"))
 
 
 if __name__ == "__main__":
