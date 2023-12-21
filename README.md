@@ -2,13 +2,13 @@
 Bienvenue sur le projet de calcul géodésique, développé en Python avec l'interface graphique PyQt5. Cette application offre une variété de fonctionnalités avancées pour les géomètres, les professionnels de la géodésie et tous ceux qui travaillent avec des données géographiques.
 
 ## Fonctionnalités
-Le calcul de la longueur d'arc sur la surface de l'ellipsoïde avec une représentation graphique; **NOUVEAU**<br>
-Le calcul des latitudes géodésique, géocentrique et réduite avec des représentations visuelles; **NOUVEAU**<br>
-La résolution des problèmes direct et inverse sur une sphère et un ellipsoïde; **NOUVEAU**<br>
-Calcul de la latitude isométrique 𝑈 et de la latitude φ; <br> 
-Transformation des coordonnées géographiques en coordonnées de projection Lambert et inversement; <br>
-Calcul des paramètres d'un ellipsoïde ; 
-Calcul des deux rayons de courbure ; 
+-Le calcul de la longueur d'arc sur la surface de l'ellipsoïde avec une représentation graphique; **NOUVEAU**<br>
+-Le calcul des latitudes géodésique, géocentrique et réduite avec des représentations visuelles; **NOUVEAU**<br>
+-La résolution des problèmes direct et inverse sur une sphère et un ellipsoïde; **NOUVEAU**<br>
+-Calcul de la latitude isométrique 𝑈 et de la latitude φ; <br> 
+-Transformation des coordonnées géographiques en coordonnées de projection Lambert et inversement; <br>
+-Calcul des paramètres d'un ellipsoïde ; 
+-Calcul des deux rayons de courbure ; 
 
 ## Bibliothèques utilisées
 -PyQt5 <br>
